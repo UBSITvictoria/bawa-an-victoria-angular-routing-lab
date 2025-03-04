@@ -6,12 +6,13 @@ import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './about/profile/profile.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirects empty path to /home
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent, children: [
     { path: 'profile', component: ProfileComponent }
   ]},
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
 ];
 
 @NgModule({
