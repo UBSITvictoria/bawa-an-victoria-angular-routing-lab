@@ -12,8 +12,13 @@ const routes: Routes = [
     { path: 'profile', component: ProfileComponent }
   ]},
   { path: 'contact', component: ContactComponent },
+<<<<<<< HEAD
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
+=======
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AdminGuard] }
+>>>>>>> feature-component
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
