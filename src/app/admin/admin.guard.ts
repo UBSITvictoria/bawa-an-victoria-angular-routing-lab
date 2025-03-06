@@ -10,7 +10,7 @@ export class AdminGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // Add your authentication logic here
-    return true; // Change this to actual authentication check
+    // Your authentication or route protection logic here
+    return true;  // Return true or false based on your logic (for now, this allows access)
   }
 }
