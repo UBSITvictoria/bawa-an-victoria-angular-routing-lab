@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './about/profile/profile.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -13,11 +15,12 @@ import { ProfileComponent } from './about/profile/profile.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/023/625/985/original/dog-paw-bone-seamless-pattern-tile-background-repeat-wallpaper-white-isolated-vector.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for links */
+.nav-link {
+    color: #555; /* Default link color */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff; /* Hover color (blue) */
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Active link styling */
+.nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+    border-bottom: 2px solid #007bff; /* Optional underline for active link */
+}

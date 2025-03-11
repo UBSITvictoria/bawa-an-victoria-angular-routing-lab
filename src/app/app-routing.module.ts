@@ -9,9 +9,12 @@ import { AdminGuard } from './admin/admin.guard'; // Import AdminGuard
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirects empty path to /home
   { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent, children: [
-    { path: 'profile', component: ProfileComponent }
-  ]},
+    { path: 'about', 
+    component: AboutComponent, 
+    children: [
+      { path: 'profile', component: ProfileComponent }
+    ]
+  },
   { path: 'contact', component: ContactComponent },
   { 
     path: 'admin', 
