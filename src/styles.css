@@ -10,20 +10,40 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover effect for links */
+
 .nav-link {
-    color: #555; /* Default link color */
+    color: #555; 
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #007bff; /* Hover color (blue) */
-    transform: scale(1.1); /* Slight zoom on hover */
+    color: #007bff; 
+    transform: scale(1.1); 
 }
 
-/* Active link styling */
+
 .nav-link.active {
     font-weight: bold;
     color: #007bff;
-    border-bottom: 2px solid #007bff; /* Optional underline for active link */
+    border-bottom: 2px solid #007bff; 
 }
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+}
+
+        
+.card-img-top {
+    transition: filter 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    filter: saturate(2); 
+}
+        
+
