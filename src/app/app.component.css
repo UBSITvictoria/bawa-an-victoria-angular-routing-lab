@@ -1,0 +1,8 @@
+body {
+    body {
+        background-image: url('https://static.vecteezy.com/system/resources/previews/023/625/985/original/dog-paw-bone-seamless-pattern-tile-background-repeat-wallpaper-white-isolated-vector.jpg'); /* Replace 'your-image.jpg' with the image file's path */
+        background-size: cover; /* Makes the image cover the entire background */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    }
+}

@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/023/625/985/original/dog-paw-bone-seamless-pattern-tile-background-repeat-wallpaper-white-isolated-vector.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.nav-link {
+    color: #555; 
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff; 
+    transform: scale(1.1); 
+}
+
+
+.nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+    border-bottom: 2px solid #007bff; 
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+}
+
+        
+.card-img-top {
+    transition: filter 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    filter: saturate(2); 
+}
+        
+
