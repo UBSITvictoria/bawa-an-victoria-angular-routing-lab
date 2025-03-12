@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <h2>Add User</h2>
+  <form (ngSubmit)="onSubmit()">
+    <!-- Name Field -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        id="name"
+        type="text"
+        [(ngModel)]="user.name"
+        class="form-control"
+        name="name"
+        placeholder="Enter full name"
+        required
+      />
+    </div>
+
+    <!-- Email Field -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        id="email"
+        type="email"
+        [(ngModel)]="user.email"
+        class="form-control"
+        name="email"
+        placeholder="Enter email address"
+        required
+      />
+    </div>
+
+    <!-- Bio Field -->
+    <div class="mb-3">
+      <label for="bio" class="form-label">Bio</label>
+      <textarea
+        id="bio"
+        [(ngModel)]="user.bio"
+        class="form-control"
+        name="bio"
+        placeholder="Enter a brief bio"
+      ></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Add User</button>
+  </form>
+</div>

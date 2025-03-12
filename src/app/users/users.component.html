@@ -1,12 +1,13 @@
-<div class="container users-container">
-    <h1 class="text-primary">Users</h1>
-    <p class="lead">Manage and view user profiles here.</p>
-
-    <div class="card mt-4">
-        <div class="card-body">
-            <h5 class="card-title">User Profile</h5>
-            <p class="card-text">View and edit user details.</p>
-            <a routerLink="profile" class="btn btn-primary">Go to Profile</a>
-        </div>
+<div class="container">
+    <h2>Users</h2>
+    <div class="card" style="width: 18rem;">
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="User">
+      <div class="card-body">
+        <h5 class="card-title">User Name</h5>
+        <p class="card-text">This user is ...</p>
+        <a [routerLink]="['/users/profile/edit']" class="btn btn-warning">Edit</a>
+      </div>
     </div>
-</div>
+    <a [routerLink]="'/users/profile/add'" class="btn btn-success mt-3">Add New Profile</a>
+  </div>
+  <router-outlet></router-outlet>

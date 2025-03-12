@@ -7,6 +7,13 @@ import { UsersComponent } from './users/users.component';
 import { ProfileComponent } from './users/profile/profile.component';
 import { AdminGuard } from './admin/admin.guard';
 
+
+import { AppComponent } from './app.component';
+import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
+import { AddProfileComponent } from './users/add-profile/add-profile.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -14,11 +21,19 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { 
     path: 'users', 
-    component: UsersComponent, 
+    component: UsersComponent,
     children: [
-      { path: 'profile', component: ProfileComponent }
+      { path: 'profile', component: ProfileComponent },
+      { path: 'profile/edit-progfile/:id', component: EditProfileComponent }, // Edit Profile
+      { path: 'profile/add', component: AddProfileComponent } // Add Profile
+
     ]
+    
   },
+
+  
+
+
   { 
     path: 'admin', 
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), 
@@ -28,7 +43,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), FormsModule, BrowserModule],
+  exports: [RouterModule],
+  providers: [AdminGuard],
+  
 })
 export class AppRoutingModule { }

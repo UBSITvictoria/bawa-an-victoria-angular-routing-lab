@@ -1,13 +1,13 @@
-
-<div class="container mt-5">
-    <h1 class="text-success">Profile</h1>
-    <p class="lead">This is where we pretend to be professional. If you’re looking for actual qualifications, we suggest checking back in a few years. For now, enjoy our accidental expertise in breaking things!</p>
-    <button class="btn btn-outline-primary">Edit Profile</button>
-<<<<<<< HEAD:src/app/about/profile/profile.component.html
-
-</div>  
-
-
-=======
-</div>
->>>>>>> feature-routing-backup:src/app/users/profile/profile.component.html
+<div class="container">
+    <h2>Users</h2>
+    <div class="card" style="width: 18rem;">
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="User">
+      <div class="card-body">
+        <h5 class="card-title">User Name</h5>
+        <p class="card-text">This user is ...</p>
+        <a [routerLink]="['/users/profile/edit', 123]" class="btn btn-warning">Edit</a>
+      </div>
+    </div>
+    <a [routerLink]="'/users/profile/add'" class="btn btn-success mt-3">Add New Profile</a>
+  </div>
+  <router-outlet></router-outlet>

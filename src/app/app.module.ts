@@ -10,12 +10,22 @@ import { ProfileComponent } from './users/profile/profile.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 
+
+import { EditProfileComponent } from './users/edit-profile/edit-profile.component';
+import { AddProfileComponent } from './users/add-profile/add-profile.component';
+import { FormsModule } from '@angular/forms';
+
+
+
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    FormsModule,
   ],
+  ,
+  
   providers: []
 })
 export class AppModule { }
