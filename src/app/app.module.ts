@@ -5,24 +5,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { ProfileComponent } from './about/profile/profile.component';
+import { UsersComponent } from './users/users.component';
+import { ProfileComponent } from './users/profile/profile.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    ProfileComponent,
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
 export class AppModule { }
