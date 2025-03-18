@@ -1,4 +1,95 @@
 <h1>Angular Child Routes Example</h1>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<h1>{{pageTitle}}</h1>
+<p>Current time:{{curentTime}}</p>
+
+<div>
+    <img [src] = "imageUrl" [alt] = "'Angular Logo'">
+    <button [disabled]="isDisabled">Click Me</button>
+</div>
+
+<div>
+    <button (click)= "incrementCount()">Click: {{clickCount}}</button>
+    <input (input)="onInput($event)" placeholder="kjdzsfgjaef">
+</div>
+
+
+<p></p>
+
+
+
+
+<div>
+    
+
+   
+<input [(ngModel)] ="name" placeholder="Enter Name:">
+<p>Name: {{name}}</p>
+<input [(ngModel)] ="email" placeholder="Enter Email:">
+<p>Email: {{email}}</p>
+<input [(ngModel)] ="phone_no" placeholder="Enter Phone Number:">
+<p>Phone No: {{phone_no}}</p>
+<input [(ngModel)] ="address" placeholder="Enter Address:">
+<p>Address: {{address}}</p>
+<input [(ngModel)] ="ssn" placeholder="Enter Social Security Number:">
+<p>Social Security Number: {{ssn}}</p>
+
+<button class="btn btn-primary" (click)="showModal()">Open Input Modal</button>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+    Open Input Modal
+</button>
+<div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveData()">Save changes</button>
+      </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Enter Your Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="phone_no">Phone Number</label>
+            <input type="text" class="form-control" id="phone_no" [(ngModel)]="phone_no" name="phone_no">
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="address" name="address">
+          </div>
+          <div class="form-group">
+            <label for="ssn">Social Security Number</label>
+            <input type="text" class="form-control" id="ssn" [(ngModel)]="ssn" name="ssn">
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
 <nav>
 <a routerLink="/parent" routerLinkActive="active">Parent</a> |
 <a routerLink="/parent/child1" routerLinkActive="active">Child One</a> |
