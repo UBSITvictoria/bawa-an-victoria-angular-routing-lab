@@ -8,8 +8,10 @@
 </nav>
 <router-outlet></router-outlet>
 <br><br><br>
+<h1>{{pageTitle}}</h1>
+<p>Current Time: {{currentTime | date:'medium'}}</p>
 
-
+<button (click)="incrementCount()">Clicks: {{clickCount}}</button>
 
 <h6>ACTIVITY 03/18/25</h6>
 <input [(ngModel)] ="name" placeholder="Enter Name:"><br><br>
