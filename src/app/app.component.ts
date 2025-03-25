@@ -1,11 +1,40 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { DataBindingDemoComponent } from './data-binding-demo/data-binding-demo.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [RouterOutlet, RouterModule, DataBindingDemoComponent],
+  template: `
+  <div class="app-container">
+    <header>
+      <h1>Angular 19 Data Binding Lesson</h1>
+    </header>
+    <main>
+      <app-data-binding-demo></app-data-binding-demo>
+    </main>
+    <footer>
+      <p>Angular 19 Data Binding Techniques Demo</p>
+    </footer>
+  </div>
+`,
+styles: [`
+    .app-container {
+      font-family: Arial, sans-serif;
+    } 
+    header, footer {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    } 
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+    } 
+  `]
+  
 })
 export class AppComponent {
   title = 'angular-data-binding-lesson';
