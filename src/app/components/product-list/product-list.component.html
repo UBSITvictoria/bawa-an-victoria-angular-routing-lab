@@ -1,0 +1,58 @@
+<div class="row mb-3">
+    <div class="col-md-8">
+      <h2>Product List</h2>
+    </div>
+    <div class="col-md-4 text-end">
+      <button class="btn btn-primary" (click)="router.navigate(['/add-product'])">Add New Product</button>
+    </div>
+  </div>
+  
+  <!-- Search and Filter -->
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-text">Search</span>
+        <input type="text" class="form-control" placeholder="Search by product name"
+               [(ngModel)]="searchTerm" (input)="filterProducts()">
+        <button class="btn btn-outline-secondary" type="button" (click)="clearSearch()">Clear</button>
+      </div>
+    </div>
+  
+    <div class="col-md-3">
+      <select class="form-select" [(ngModel)]="filterCategory" (change)="filterProducts()">
+        <option value="">All Categories</option>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+  
+    <div class="col-md-3">
+      <select class="form-select" [(ngModel)]="sortOption" (change)="filterProducts()">
+        <option value="name">Sort by Name</option>
+        <option value="price">Sort by Price</option>
+        <option value="rating">Sort by Rating</option>
+      </select>
+    </div>
+  </div>
+  
+  <!-- Product List -->
+  <div class="row">
+    <div *ngIf="filteredProducts.length === 0" class="col-12 text-center">
+      <div class="alert alert-info">No products found.</div>
+    </div>
+  
+    <div *ngFor="let product of filteredProducts" class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}">
+  
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text fw-bold">Price: {{ product.price | currency }}</p>
+          
+          <button class="btn btn-primary me-2" (click)="viewProductDetails(product.id)">View</button>
+          <button class="btn btn-warning me-2" (click)="editProduct(product.id)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
