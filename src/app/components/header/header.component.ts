@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd, RouterModule } from '@angular/router';
+import { Router, NavigationEnd, RouterModule, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -7,7 +7,7 @@ import { filter } from 'rxjs/operators';
   standalone: true,
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
-  imports: [RouterModule]
+  imports: [RouterModule,RouterLinkActive]
 })
 export class HeaderComponent implements OnInit {
   title = 'Product Management App';

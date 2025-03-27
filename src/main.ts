@@ -5,6 +5,8 @@ import { DashboardComponent } from './app/components/dashboard/dashboard.compone
 import { ProductListComponent } from './app/components/product-list/product-list.component';
 import { ProductDetailComponent } from './app/components/product-detail/product-detail.component';
 import { ProductFormComponent } from './app/components/product-form/product-form.component';
+import { Component } from '@angular/core';
+import { ProductService } from './app/services/product.service';
 
 const routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' as 'full' },
@@ -16,5 +18,5 @@ const routes = [
 ];
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)]
+  providers: [provideRouter(routes),ProductService]
 }).catch(err => console.error(err));

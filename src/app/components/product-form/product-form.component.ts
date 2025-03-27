@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
+
 @Component({
   selector: 'app-product-form',
-  imports: [CommonModule, FormsModule],
-  template: `
-   
-  `
+  imports: [CommonModule, FormsModule,RouterModule,ReactiveFormsModule],
+  standalone: true,
+  templateUrl: './product-form.component.html' ,
+  styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
   productForm: FormGroup;
