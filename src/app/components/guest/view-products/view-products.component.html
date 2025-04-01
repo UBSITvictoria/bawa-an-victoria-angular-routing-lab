@@ -1,0 +1,36 @@
+<div class="container">
+  <h3 class="mb-4">Available Products</h3>
+  <div class="row">
+    <div *ngFor="let product of products" class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text"><strong>Price: ${{ product.price.toFixed(2) }}</strong></p>
+          <button class="btn btn-primary" (click)="viewProductDetails(product)">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product Details Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" *ngIf="selectedProduct">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedProduct.name }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img [src]="selectedProduct.imageUrl" class="img-fluid mb-3" alt="{{ selectedProduct.name }}">
+        <p><strong>Description:</strong> {{ selectedProduct.description }}</p>
+        <p><strong>Price:</strong> ${{ selectedProduct.price.toFixed(2) }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
